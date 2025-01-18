@@ -34,6 +34,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.attemptBtn = new System.Windows.Forms.Button();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.ansTxtLbl = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,8 @@
             // 
             this.wordTextBox.AcceptsReturn = true;
             this.wordTextBox.AcceptsTab = true;
+            this.wordTextBox.AccessibleDescription = "A text box to attempt a palindrome";
+            this.wordTextBox.AccessibleName = "wordTextBox";
             this.wordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
             this.wordTextBox.Font = new System.Drawing.Font("Hack", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
@@ -80,7 +83,7 @@
             this.titleLabel.AccessibleName = "titleLabel";
             this.titleLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.titleLabel.Font = new System.Drawing.Font("PRIMETIME", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(74)))), ((int)(((byte)(73)))));
             this.titleLabel.Location = new System.Drawing.Point(268, 47);
@@ -98,6 +101,7 @@
             this.attemptBtn.TabIndex = 4;
             this.attemptBtn.Text = "Attempt";
             this.attemptBtn.UseVisualStyleBackColor = true;
+            this.attemptBtn.Click += new System.EventHandler(this.attemptBtn_Click);
             // 
             // resetBtn
             // 
@@ -110,16 +114,34 @@
             this.resetBtn.TabIndex = 5;
             this.resetBtn.Text = "Reset";
             this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // ansTxtLbl
+            // 
+            this.ansTxtLbl.AccessibleDescription = "text to let user no word is not a palindrome";
+            this.ansTxtLbl.AccessibleName = "ansTxtLbl";
+            this.ansTxtLbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.ansTxtLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.ansTxtLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ansTxtLbl.Font = new System.Drawing.Font("Midday Champy", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ansTxtLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
+            this.ansTxtLbl.Location = new System.Drawing.Point(199, 248);
+            this.ansTxtLbl.Name = "ansTxtLbl";
+            this.ansTxtLbl.Size = new System.Drawing.Size(249, 35);
+            this.ansTxtLbl.TabIndex = 6;
+            this.ansTxtLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PalindromeChecker
             // 
+            this.AcceptButton = this.attemptBtn;
             this.AccessibleDescription = "A GUI that checks wrods to see if they are palindromes";
             this.AccessibleName = "Palindrome Checker";
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1043, 492);
+            this.Controls.Add(this.ansTxtLbl);
             this.Controls.Add(this.resetBtn);
             this.Controls.Add(this.attemptBtn);
             this.Controls.Add(this.titleLabel);
@@ -149,6 +171,7 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button attemptBtn;
         private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.Label ansTxtLbl;
     }
 }
 
