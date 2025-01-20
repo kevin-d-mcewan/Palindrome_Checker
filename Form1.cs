@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Palindrom_Checker
@@ -6,7 +7,7 @@ namespace Palindrom_Checker
     public partial class PalindromeChecker : Form
     {
         int i, startchar, lastchar;
-        //private TextBox textBox1;
+
 
 
         public PalindromeChecker( )
@@ -14,29 +15,8 @@ namespace Palindrom_Checker
             InitializeComponent( );
         }
 
-        //public void InitializeComponent( )
-        //{
-        //    this.textBox1 = new System.Windows.Forms.TextBox();
-        //    this.SuspendLayout( );
-        //    // 
-        //    // textBox1
-        //    // 
-        //    this.textBox1.AcceptsReturn = true;
-        //    this.textBox1.AcceptsTab = true;
-        //    this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-        //    this.textBox1.Multiline = true;
-        //    this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-        //    // 
-        //    // Form1
-        //    // 
-        //    this.ClientSize = new System.Drawing.Size(284 , 264);
-        //    this.Controls.Add(this.textBox1);
-        //    this.Text = "TextBox Example";
-        //    this.ResumeLayout(false);
-        //    this.PerformLayout( );
 
 
-        //}
 
         private void attemptBtn_Click( object sender , EventArgs e )
         {
@@ -60,7 +40,9 @@ namespace Palindrom_Checker
                     // Display message if not a palindrome
                     ansTxtLbl.Visible = true;
                     ansTxtLbl.Text = "Not palindrome";
+                    ansTxtLbl.BackColor = System.Drawing.Color.DarkRed;
                     wordTextBox.Focus( );
+                    wordTextBox.ResetText( );
 
                     // Set a Flag to prevent closing the app after breaking loop
                     // Allows user to try again
@@ -72,8 +54,10 @@ namespace Palindrom_Checker
             if ( i < 2 ) {
                 // Display message if input is a Palindrome
                 ansTxtLbl.Visible = true;
-                ansTxtLbl.Text = "IT is a PALINDROME!!!";
+                ansTxtLbl.Text = "IT is a PALINDROME";
+                ansTxtLbl.BackColor = System.Drawing.Color.DarkGreen;
                 wordTextBox.Focus( );
+                wordTextBox.ResetText( );
             } else {
                 {
                     // Reset the flag back to 0 to stop infinite loop
@@ -84,20 +68,18 @@ namespace Palindrom_Checker
 
 
 
-        private void wordTextBox_click( object sender , EventArgs e )
-        {
-            wordTextBox.Focus( );
-            wordTextBox.Clear( );
-
-        }
-
-
-
         private void resetBtn_Click( object sender , EventArgs e )
         {
+            Color whiteColor = Color.FromArgb(234 , 234 , 234);
+            Color randColor = Color.FromArgb(49 , 121 , 98);
+
             wordTextBox.Text = string.Empty;
             wordTextBox.Focus( );
-            ansTxtLbl.Visible = false;
+            ansTxtLbl.Visible = true;
+            ansTxtLbl.ResetText( );
+            ansTxtLbl.BackColor = whiteColor;
         }
+
+
     }
 }

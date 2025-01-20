@@ -40,8 +40,6 @@
             // 
             // wordTextBox
             // 
-            this.wordTextBox.AcceptsReturn = true;
-            this.wordTextBox.AcceptsTab = true;
             this.wordTextBox.AccessibleDescription = "A text box to attempt a palindrome";
             this.wordTextBox.AccessibleName = "wordTextBox";
             this.wordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
@@ -151,7 +149,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(256, 256);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PalindromeChecker";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
